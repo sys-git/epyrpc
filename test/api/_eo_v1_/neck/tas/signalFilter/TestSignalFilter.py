@@ -1,6 +1,4 @@
 
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.ExecutionOrganiser import \
-    ExecutionOrganiser
 from epyrpc.api.eo_v1.enums.eGlobalEnable import eGlobalEnable
 from epyrpc.api.eo_v1.impl.neck.tas.SignalFilter import SignalFilter
 from epyrpc.api.eo_v1.interfaces.common.tas.signalFilter.iSignalFilterStatus import \

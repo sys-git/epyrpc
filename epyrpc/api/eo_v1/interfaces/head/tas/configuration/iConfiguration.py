@@ -1,6 +1,6 @@
 
 from epyrpc.api.iApi import iApi
-from YouView.TAS.Common.Exceptions.NotImplemented import NotImplementedException
+from epyrpc.exceptions.NotImplemented import NotImplementedException
 
 class iConfiguration(iApi):
     def configure(self, args):

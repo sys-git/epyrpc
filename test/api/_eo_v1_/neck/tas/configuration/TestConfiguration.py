@@ -1,8 +1,4 @@
 
-from MasterBusinessLogic.ExecutionOrganiser.ExecutionOrganiser import \
-    ExecutionOrganiser
-from YouView.TAS.Common.SignalExchangeHub.SignalExchangeHub import \
-    SignalExchangeHub
 from epyrpc.api.ApiParamError import ApiParamError
 from epyrpc.api.eo_v1.impl.common.tas.ConfigurationResult import \
     ConfigurationResult

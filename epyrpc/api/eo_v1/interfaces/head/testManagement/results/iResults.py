@@ -1,6 +1,6 @@
 
-from YouView.TAS.Common.Exceptions.NotImplemented import NotImplementedException
 from epyrpc.api.iApi import iApi
+from epyrpc.exceptions.NotImplemented import NotImplementedException
 
 class iResults(iApi):
     r"""

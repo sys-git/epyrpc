@@ -7,8 +7,6 @@ from epyrpc.api.eo_v1.impl.common.testManagement.results.PackageResult import \
 from epyrpc.api.eo_v1.impl.common.tests.ATestResult import ATestResult
 from epyrpc.api.eo_v1.interfaces.neck.testManagement.results.iResults import \
     iResults
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.ExecutionOrganiser import \
-    ExecutionOrganiser
 import copy
 
 class Results(iResults):

@@ -51,7 +51,7 @@ class Head(iIpcTransportStateChangeListener):
         self.tm = TransactionManager(HeadTransactionIdGenerator())
         self.logger = LogManager().getLogger(self.__class__.__name__)
         self.ipc = HeadQueueTransporter(qTransport, self.tm, self, logger=self.logger)
-        self.api = ApiFactory.get(eApiType.EO_V1, ns="YouView", solicited=True, ipc=self.ipc)
+        self.api = ApiFactory.get(eApiType.EO_V1, ns="MyWay", solicited=True, ipc=self.ipc)
         #    Now register our listeners:
         self.api.tas.setHandler(iTas.EVENT__SIGNAL, self._signalHandler)
         self.ipc.connect()
@@ -71,7 +71,7 @@ class Neck(iIpcTransportStateChangeListener):
         self.tm = TransactionManager(NeckTransactionIdGenerator())
         self.logger = LogManager().getLogger(self.__class__.__name__)
         self.ipc = QueueTransporter(qTransport, self.tm, self, logger=self.logger)
-        self.api = ApiFactory.get(eApiType.EO_V1__HANDLER, ns="YouView", solicited=False, ipc=self.ipc)
+        self.api = ApiFactory.get(eApiType.EO_V1__HANDLER, ns="MyWay", solicited=False, ipc=self.ipc)
         self.ipc.connect()
         #    Now register for SEH signals:
         self.seh = SignalExchangeHub()

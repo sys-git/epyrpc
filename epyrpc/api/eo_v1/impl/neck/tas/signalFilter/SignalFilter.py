@@ -3,8 +3,6 @@ from epyrpc.api.eo_v1.impl.checkers.tas.SignalFilterChecker import \
     SignalFilterChecker
 from epyrpc.api.eo_v1.interfaces.neck.tas.signalFilter.iSignalFilter import \
     iSignalFilter
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.ExecutionOrganiser import \
-    ExecutionOrganiser
 import pickle
 
 class SignalFilter(iSignalFilter):

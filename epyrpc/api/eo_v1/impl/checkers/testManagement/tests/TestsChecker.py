@@ -6,10 +6,6 @@ from epyrpc.api.eo_v1.interfaces.common.testManagement.tests.iATestId import \
     iATestId
 from epyrpc.api.eo_v1.interfaces.common.testManagement.tests.iTestStatsResult import \
     iTestStatsResult
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.Cache.primitives.CachedTestDetails import \
-    CachedTestDetails
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.Cache.primitives.CachedTestMetadataDetails import \
-    CachedTestMetadataDetails
 
 class TestsChecker(iTestsChecker):
     r"""

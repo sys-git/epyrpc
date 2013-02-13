@@ -1,8 +1,4 @@
 
-from YouView.TAS.Common.SignalExchangeHub.SignalExchangeHub import \
-    SignalExchangeHub
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.ExecutionOrganiser import \
-    ExecutionOrganiser
 from epyrpc.api.eo_v1.enums.eStateControlResult import eStateControlResult
 from epyrpc.api.eo_v1.impl.neck.tas.StateControl import StateControl
 from epyrpc.api.iApiTransportResponse import iApiTransportResponse

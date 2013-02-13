@@ -1,10 +1,4 @@
 
-from YouView.TAS.Common.CommonSignals.Error import Error
-from YouView.TAS.Common.SignalExchangeHub.SignalExchangeHub import \
-    SignalExchangeHub
-from YouView.TAS.Master.Domain.SystemReady import SystemReady
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.ExecutionOrganiser import \
-    ExecutionOrganiser
 from epyrpc.api.ApiAction import ApiAction
 from epyrpc.api.ApiTransportResponse import ApiTransportResponse
 from epyrpc.api.eo_v1.enums.eStateControlResult import eStateControlResult
@@ -14,7 +8,6 @@ from epyrpc.api.eo_v1.interfaces.neck.tas.stateControl.iStateControl import \
     iStateControl
 from multiprocessing.synchronize import Semaphore
 import threading
-
 
 class StateControl(iStateControl):
     r"""

@@ -7,8 +7,6 @@ from epyrpc.api.eo_v1.impl.neck.tas.signalFilter.SignalFilter import SignalFilte
 from epyrpc.api.eo_v1.impl.neck.tas.stateControl.StateControl import StateControl
 from epyrpc.api.eo_v1.impl.neck.tas.userData.UserData import UserData
 from epyrpc.api.eo_v1.interfaces.neck.tas.iTas import iTas
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.ExecutionOrganiser import \
-    ExecutionOrganiser
 
 class Tas(iTas):
     """

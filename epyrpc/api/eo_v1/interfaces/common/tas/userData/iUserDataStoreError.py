@@ -1,4 +1,5 @@
-from YouView.TAS.Common.Exceptions.NotImplemented import NotImplementedException
+
+from epyrpc.exceptions.NotImplemented import NotImplementedException
 
 class iUserDataStoreError(Exception):
     r"""

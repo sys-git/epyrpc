@@ -1,6 +1,4 @@
 
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.ExecutionOrganiser import \
-    ExecutionOrganiser
 from epyrpc.api.eo_v1.impl.neck.testManagement.stats.Stats import Stats
 from epyrpc.api.eo_v1.interfaces.common.testManagement.stats.iStatsResult import \
     iStatsResult

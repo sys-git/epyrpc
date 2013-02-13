@@ -5,7 +5,6 @@ Created on 7 Nov 2012
 '''
 
 from epyrpc.api.iApi import iApi
-from YouView.TAS.Common.Exceptions.NotImplemented import NotImplementedException
 
 class iAPI(iApi):
     r"""

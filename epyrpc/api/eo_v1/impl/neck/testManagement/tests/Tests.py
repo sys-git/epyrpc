@@ -3,8 +3,6 @@ from epyrpc.api.eo_v1.impl.checkers.testManagement.tests.TestsChecker import \
     TestsChecker
 from epyrpc.api.eo_v1.impl.common.tests.ATest import ATest
 from epyrpc.api.eo_v1.interfaces.neck.testManagement.tests.iTests import iTests
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.ExecutionOrganiser import \
-    ExecutionOrganiser
 import copy
 
 class Tests(iTests):

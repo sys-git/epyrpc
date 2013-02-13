@@ -4,8 +4,6 @@ from epyrpc.api.eo_v1.interfaces.common.tas.signalFilter.iFilterIdentifier impor
     iFilterIdentifier
 from epyrpc.api.eo_v1.interfaces.common.tas.signalFilter.iNamespace import \
     iNamespace
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.SignalFilters.eFilterDirection import \
-    eFilterDirection
 
 class Namespace(iNamespace):
     def __init__(self, namespace=None, regx=None, _nId=None, direction=eFilterDirection.IN):

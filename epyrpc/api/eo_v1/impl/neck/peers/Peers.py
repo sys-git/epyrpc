@@ -4,8 +4,6 @@ from epyrpc.api.eo_v1.impl.checkers.peers.PeersChecker import PeersChecker
 from epyrpc.api.eo_v1.impl.common.peers.APeer import APeer
 from epyrpc.api.eo_v1.impl.common.peers.PeerResult import PeerResult
 from epyrpc.api.eo_v1.interfaces.neck.peers.iPeers import iPeers
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.ExecutionOrganiser import \
-    ExecutionOrganiser
 from epyrpc.api.eo_v1.enums.ePeerRemoval import ePeerRemoval
 import copy
 

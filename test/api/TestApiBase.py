@@ -57,18 +57,18 @@ class TestThreadPool(unittest.TestCase):
             self.api.teardown()
     def testMaxAsyncIsNone(self):
         self._logger.warn("testMaxAsyncIsNone")
-        self.api = MyApi("test", ns="Test.YouView", ignoreUnhandled=True, maxAsync=None)
+        self.api = MyApi("test", ns="Test.MyWay", ignoreUnhandled=True, maxAsync=None)
         assert len(self.api._workers) == 1
     def testMaxAsyncIsOne(self, count=1):
         self._logger.warn("testMaxAsyncIsOne")
-        self.api = MyApi("test", ns="Test.YouView", ignoreUnhandled=True, maxAsync=count)
+        self.api = MyApi("test", ns="Test.MyWay", ignoreUnhandled=True, maxAsync=count)
         assert len(self.api._workers) == count
     def testMaxAsyncIsTen(self):
         self._logger.warn("testMaxAsyncIsTen")
         self.testMaxAsyncIsOne(count=10)
     def testKnownOnQueue(self):
         self._logger.warn("testKnownOnQueue")
-        ns = "Test.YouView"
+        ns = "Test.MyWay"
         self.api = MyApi1("test", ns=ns, ignoreUnhandled=True, maxAsync=1)
         self.api.setHandler("voo", self._handler)
         tNs = ns + ".myapi1.voo"
@@ -91,7 +91,7 @@ class TestThreadPool(unittest.TestCase):
         pass
     def testUnknownOnQueue(self):
         self._logger.warn("testUnknownOnQueue")
-        ns = "Test.YouView"
+        ns = "Test.MyWay"
         self.api = MyApi1("test", ns=ns, ignoreUnhandled=True, maxAsync=1)
         d = CustomException(456)
         tId = (1, 123)
@@ -107,7 +107,7 @@ class TestThreadPool(unittest.TestCase):
         assert data.tId() == tId
     def testKnownHandled(self):
         self._logger.warn("testKnownHandled")
-        ns = "Test.YouView"
+        ns = "Test.MyWay"
         self.api = MyApi2("test", ns=ns, ignoreUnhandled=True, maxAsync=1)
         self.api.setHandler("voo", self._handler2)
         tNs = ns + ".myapi2.voo"
@@ -132,7 +132,7 @@ class TestThreadPool(unittest.TestCase):
         assert kwargs_ == {}
     def testUnknownHandled(self):
         self._logger.warn("testUnknownHandled")
-        ns = "Test.YouView"
+        ns = "Test.MyWay"
         self.api = MyApi2("test", ns=ns, ignoreUnhandled=True, maxAsync=1)
         self.api.setHandler("voo", self._handler2)
         tNs = ns + ".myapi2.voo"
@@ -161,7 +161,7 @@ class TestThreadPool(unittest.TestCase):
         self._handler3Lock.release()
     def testMultipleHandledSimultaneously(self, count=10, numCalls=10, asyncBlockingTimeout=4):
         self._logger.warn("testMultipleHandledSimultaneously")
-        ns = "Test.YouView"
+        ns = "Test.MyWay"
         self.api = MyApi3("test", ns=ns, ignoreUnhandled=True, maxAsync=count)
         self.api.setHandler("voo", self._handler3)
         tNs = ns + ".myapi3.voo"
@@ -217,7 +217,7 @@ class TestThreadPool(unittest.TestCase):
         self.testMultipleHandledSimultaneously(count=1, numCalls=100, asyncBlockingTimeout=0.1)
     def testUnhandledApiWhenNotIgnoreUnhandled(self):
         self._logger.warn("testUnhandledApiWhenNotIgnoreUnhandled")
-        ns = "Test.YouView"
+        ns = "Test.MyWay"
         self.api = MyApi4("test", ns=ns, ignoreUnhandled=True, maxAsync=1)
         tNs = ns + ".myapi4.voo"
         tNs = tNs.lower()
@@ -233,7 +233,7 @@ class TestThreadPool(unittest.TestCase):
             assert False
     def testUnhandledApiWhenIgnoreUnhandled(self):
         self._logger.warn("testUnhandledApiWhenIgnoreUnhandled")
-        ns = "Test.YouView"
+        ns = "Test.MyWay"
         self.api = MyApi4("test", ns=ns, ignoreUnhandled=True, maxAsync=1)
         tNs = ns + ".myapi4.voo"
         tNs = tNs.lower()

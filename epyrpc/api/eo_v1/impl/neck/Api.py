@@ -4,8 +4,6 @@ from epyrpc.api.eo_v1.impl.neck.peers.Peers import Peers
 from epyrpc.api.eo_v1.impl.neck.tas.Tas import Tas
 from epyrpc.api.eo_v1.impl.neck.testManagement.TestManagement import \
     TestManagement
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.ExecutionOrganiser import \
-    ExecutionOrganiser
 
 class api(ApiBase):
     r"""

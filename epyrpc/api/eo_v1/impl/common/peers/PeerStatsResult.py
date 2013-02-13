@@ -3,7 +3,6 @@ from epyrpc.api.eo_v1.impl.common.testManagement.NoStatError import NoStatError
 from epyrpc.api.eo_v1.interfaces.common.peers.iPeerStatsResult import \
     iPeerStatsResult
 import copy
-from YouView.TAS.Common.CommonSignals.Enums.ActivePeerState import ActivePeerState
 
 _INDEX_PREFIX = u"INDEX"
 _INDEX_TOTAL = "TOTAL"

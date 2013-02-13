@@ -1,6 +1,6 @@
 
-from YouView.TAS.Common.Exceptions.NotImplemented import NotImplementedException
 from epyrpc.api.iApiData import iApiData
+from epyrpc.exceptions.NotImplemented import NotImplementedException
 
 class iGlobalEnable(iApiData):
     def isEnabled(self):

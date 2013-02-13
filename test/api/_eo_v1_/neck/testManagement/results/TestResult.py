@@ -1,6 +1,4 @@
 
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.ExecutionOrganiser import \
-    ExecutionOrganiser
 from epyrpc.api.eo_v1.impl.common.peers.APeer import APeer
 from epyrpc.api.eo_v1.impl.common.testManagement.tests.ATestId import ATestId
 from epyrpc.api.eo_v1.impl.neck.testManagement.results.Results import Results

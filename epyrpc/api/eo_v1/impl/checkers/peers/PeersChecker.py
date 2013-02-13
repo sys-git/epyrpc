@@ -6,8 +6,6 @@ from epyrpc.api.eo_v1.interfaces.common.peers.iAPeerRemover import iAPeerRemover
 from epyrpc.api.eo_v1.interfaces.common.peers.iPeerStats import iPeerStats
 from epyrpc.api.eo_v1.interfaces.common.peers.iPeerStatsResult import \
     iPeerStatsResult
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.Cache.primitives.CachedPeerDetails import \
-    CachedPeerDetails
 
 class PeersChecker(iPeersChecker):
     r"""

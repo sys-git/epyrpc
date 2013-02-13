@@ -1,8 +1,4 @@
 
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.Cache.primitives.CachedTestDetails import \
-    CachedTestDetails
-from YouView.TAS.Master.MasterBusinessLogic.ExecutionOrganiser.ExecutionOrganiser import \
-    ExecutionOrganiser
 from epyrpc.api.eo_v1.impl.common.testManagement.tests.ATestId import ATestId
 from epyrpc.api.eo_v1.impl.neck.testManagement.tests.Tests import Tests
 from epyrpc.api.eo_v1.interfaces.common.testManagement.tests.iTestPacks import \

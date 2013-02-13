@@ -74,63 +74,10 @@ class TestResultsResult(iTestResultsResult):
         @type tests: dict.
         """
 
-        from YouView.TAS.Master.Domain.Test.TestStates import TestState
-
         result = TestResultsResult(flush=flush)
         if tests == None:
             return result
-        r""" Calculate stats... """
-        #    #Modules, #Classes, #MaxIterations, #Invalids, #ManualInspection, #Envs:
-        passes = fail = error = skip = timedout = dbusError = 0
-        dbusNoReply = deadSlaveCrash = slaveCrash = deadBox = 0
-        noXml = invalidXml = insufficientEnv = envServer = 0
-        for t in tests.values():
-            test = t.test()
-            #    State:
-            s = test.state
-            if s == TestState.PASS():
-                passes += 1
-            if s == TestState.FAILURE():
-                fail += 1
-            if s == TestState.ERROR():
-                error += 1
-            if s == TestState.SKIP():
-                skip += 1
-            if s == TestState.TIMEOUT():
-                timedout += 1
-            if s == TestState.DBUS_ERROR():
-                dbusError += 1
-            if s == TestState.DBUS_NO_REPLY_ERROR():
-                dbusNoReply += 1
-            if s == TestState.DEAD_SLAVE_CRASH():
-                deadSlaveCrash += 1
-            if s == TestState.SLAVE_CRASH():
-                slaveCrash += 1
-            if s == TestState.NO_XML():
-                noXml += 1
-            if s == TestState.INVALID_XML():
-                invalidXml += 1
-            if s == TestState.INSUFFICIENT_ENV():
-                insufficientEnv += 1
-            if s == TestState.ENV_SERVER():
-                envServer += 1
-            if s == TestState.DEADBOX():
-                deadBox += 1
-        #    Set the stats:
-        result.passes = passes
-        result.fail = fail
-        result.error = error
-        result.skip = skip
-        result.timedout = timedout
-        result.dbusError = dbusError
-        result.dbusNoReply = dbusNoReply
-        result.deadSlaveCrash = deadSlaveCrash
-        result.slaveCrash = slaveCrash
-        result.noXml = noXml
-        result.invalidXml = invalidXml
-        result.insufficientEnv = insufficientEnv
-        result.envServer = envServer
-        result.deadBox = deadBox
+        r""" @TODO: Calculate stats... """
         return result
     r""" SETTERS & GETTERS for properties: """
     def setFlushed(self, flush):

@@ -1,6 +1,6 @@
 
+from epyprc.exceptions.NotImplemented import NotImplementedException
 from epyrpc.api.iApiData import iApiData
-from YouView.TAS.Common.Exceptions.NotImplemented import NotImplementedException
 
 class iLoggingResult(iApiData):
     def location(self):

@@ -1,7 +1,8 @@
 
-from YouView.TAS.Common.Exceptions.NotImplemented import NotImplementedException
+from epyrpc.api.eo_v1.interfaces.common.tas.signalFilter.iFilterIdentifier import \
+    iFilterIdentifier
 from epyrpc.api.iApiData import iApiData
-from epyrpc.api.eo_v1.interfaces.common.tas.signalFilter.iFilterIdentifier import iFilterIdentifier
+from epyrpc.exceptions.NotImplemented import NotImplementedException
 
 class iNamespace(iApiData, iFilterIdentifier):
     r"""

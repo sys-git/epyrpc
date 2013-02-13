@@ -1,5 +1,4 @@
 
-from YouView.TAS.Common.SignalExchangeHub.Listener import Listener
 from decimal import Decimal
 from epyrpc.api.eo_v1.interfaces.common.tas.signalFilter.iLocation import iLocation
 from epyrpc.exceptions.NotImplemented import NotImplementedException

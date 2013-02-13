@@ -1,6 +1,6 @@
 
-from YouView.TAS.Master.MasterBusinessLogic.Utils.Interfaces import Interface
-from YouView.TAS.Common.Exceptions.NotImplemented import NotImplementedException
+from epyrpc.exceptions.NotImplemented import NotImplementedException
+from epyrpc.utils.Interfaces import Interface
 
 class iRange(Interface):
     def start(self):
