@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ elementFormDefault="qualified"
+ targetNamespace="exec"
+ xmlns:exec = "exec">
+  <xs:element name="execution">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="exec:iterations"/>
+        <xs:element ref="exec:defaultTimeout" />
+        <xs:element ref="exec:distributionAlgorithm" />
+        <xs:element name="rebootPerTest" type="xs:boolean" />
+        <xs:element name="rebootNewBoxes" type="xs:boolean" />
+        <xs:element name="manualInspection" type="xs:boolean" />
+        <xs:element name="stopWhenAllDead" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="iterations">
+   <xs:simpleType>
+    <xs:restriction base="xs:integer">
+     <xs:minInclusive value="1" />
+     <xs:maxInclusive value="100" />
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="defaultTimeout">
+    <xs:simpleType >
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="5" />
+        </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="distributionAlgorithm">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="SingleExecution" />
+        <xs:enumeration value="ExecutionOnEachBox" />
+        <xs:enumeration value="ExecutionOnEachBoxEvenly" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>

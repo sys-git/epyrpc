@@ -1,0 +1,8 @@
+<peerInfo
+    xmlns="peerInfo"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="peerInfo validation/peerInfo.xsd">
+    <attributes>
+        <attribute name="envserverHost"></attribute>
+    </attributes>
+</peerInfo>

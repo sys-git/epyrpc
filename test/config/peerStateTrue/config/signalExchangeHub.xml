@@ -1,0 +1,6 @@
+<seh
+    xmlns="seh"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="seh validation/signalExchangeHub.xsd">
+    <workers>50</workers>
+</seh>

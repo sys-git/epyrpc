@@ -1,0 +1,2 @@
+
+class TransactionIdError(Exception): pass

@@ -1,0 +1,15 @@
+<discovery
+    xmlns="discovery"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="discovery validation/discovery.xsd">
+    <PythonNose>
+        <DiscoveryWorker enabled="true" />
+        <DatabaseReader enabled="false">
+            <location>/tmp/master.sqlite3</location>
+        </DatabaseReader>
+        <SourceLocation>
+        <testRoot>./BusinessLogic/TestDiscoveryWorker/tests</testRoot>
+        <testPath>testExamples</testPath>
+        </SourceLocation>
+    </PythonNose>
+</discovery>

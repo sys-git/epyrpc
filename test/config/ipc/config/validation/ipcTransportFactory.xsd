@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="ipcTransportFactory" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="ipcTransportFactory">
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <xs:element name="ipcTransportFactory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ns1:ipc"/>
+      </xs:sequence>
+      <xs:attribute ref="xsi:schemaLocation" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ipc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ns1:type"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="type" type="xs:NCName"/>
+</xs:schema>

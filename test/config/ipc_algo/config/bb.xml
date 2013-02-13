@@ -1,0 +1,22 @@
+<bb xmlns="bb"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="bb validation/bb.xsd">
+    <ipc>
+        <type>MQUEUE</type>
+        <compression>
+            <enable>true</enable>
+            <algo>zlib</algo>
+            <args>
+                <level>5</level>
+            </args>
+            <order>10</order>
+        </compression>
+        <encryption>
+            <enable>false</enable>
+            <algo>unknown</algo>
+            <args>
+            </args>
+            <order>2</order>
+        </encryption>
+    </ipc>
+</bb>

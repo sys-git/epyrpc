@@ -1,0 +1,19 @@
+<filters xmlns="filters" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="filters validation/filters.xsd">
+    <TestFilter enabled="true">
+        <direction>exclude</direction>
+        <parameter>testClass</parameter>
+        <values type="regex">
+            <value type="literal">tclass</value>
+            <value>class[0-9]+</value>
+        </values>
+    </TestFilter>
+    <PriorityFilter enabled="true">
+        <direction>ascending</direction>
+        <parameter>environment</parameter>
+        <values>
+            <value type="literal">dvb-ta</value>
+            <value type="regex">dvb-t[0-9]+</value>
+        </values>
+    </PriorityFilter>
+</filters>

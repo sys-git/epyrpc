@@ -1,0 +1,79 @@
+<masterLauncher xmlns="masterLauncher"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="masterLauncher validation/masterLauncher.xsd">
+    <Configurations>
+        <heads>
+            <Cmdline>
+                <enabled>true</enabled>
+                <launchType>thread</launchType>
+                <api>
+                    <name>EO_V1</name>
+                    <maxConcurrentCalls>1</maxConcurrentCalls>
+                </api>
+                <args>
+                    <clspath>YouView.TAS.Master.UI.CommandLine.CmdLine</clspath>
+                    <cls>CmdLine</cls>
+                </args>
+            </Cmdline>
+            <GUI_QT4>
+                <enabled>false</enabled>
+                <launchType>thread</launchType>
+                <api>
+                    <name>EO_V1</name>
+                    <maxConcurrentCalls>1</maxConcurrentCalls>
+                </api>
+                <!-- args>
+                    <resourceRoot>UI/WebGUI/screens/xmls</resourceRoot>
+                    <assetRoot>UI/WebGUI/screens/assets</assetRoot>
+                    <filename>AltWebUi.ui</filename>
+                    <mainWindow>
+                        <clspath>UI.WebGUI.AltWebInterface</clspath>
+                        <cls>AltWebInterface</cls>
+                    </mainWindow>
+                </args -->
+                <!-- args>
+                    <resourceRoot>UI/AltWebUi/screens/xmls</resourceRoot>
+                    <assetRoot>UI/AltWebUi/screens/assets</assetRoot>
+                    <filename>AltWebUi.ui</filename>
+                    <mainWindow>
+                        <clspath>UI.AltWebUi.AltWebInterface</clspath>
+                        <cls>AltWebInterface</cls>
+                    </mainWindow>
+                </args -->
+                <!-- args>
+                    <resourceRoot>UI/DebugGUI/screens/xmls</resourceRoot>
+                    <assetRoot>UI/DebugGUI/screens/assets</assetRoot>
+                    <filename>DockableMainWindow.ui</filename>
+                    <mainWindow>
+                        <clspath>UI.DebugGUI.screens.impls.Qt4Ui</clspath>
+                        <cls>Qt4Ui</cls>
+                    </mainWindow>
+                </args -->
+                <args>
+                    <resourceRoot>YouView/TAS/Master/UI/DebugGUI/screens/xmls</resourceRoot>
+                    <assetRoot>YouView/TAS/Master/UI/DebugGUI/screens/assets</assetRoot>
+                    <filename>DockableMainWindow.ui</filename>
+                    <mainWindow>
+                        <clspath>YouView.TAS.Master.UI.DebugGUI.screens.impls.Qt4Ui</clspath>
+                        <cls>Qt4Ui</cls>
+                    </mainWindow>
+                </args>
+            </GUI_QT4>
+        </heads>
+        <body>
+            <ExecutionOrganiser>
+                <launchType>thread</launchType>
+                <api>
+                    <name>EO_V1__HANDLER</name>
+                    <maxConcurrentCalls>10</maxConcurrentCalls>
+                </api>
+            </ExecutionOrganiser>
+        </body>
+        <api>
+            <namespace>YouView</namespace>
+            <ipc>
+                <type>MQUEUE</type>
+            </ipc>
+        </api>
+    </Configurations>
+</masterLauncher>

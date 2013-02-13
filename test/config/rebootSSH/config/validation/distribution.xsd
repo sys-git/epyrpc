@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+ elementFormDefault="qualified"
+ targetNamespace="distribution"
+ xmlns:distribution = "distribution">
+  <xs:element name="distribution">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="distribution:SourceDistribution"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SourceDistribution">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="1" ref="distribution:sourceExtensions"/>
+        <xs:element maxOccurs="1" minOccurs="1" ref="distribution:transferChunkSize"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sourceExtensions">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="unbounded" ref="distribution:extension" />
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="extension" type="xs:string"/>
+  <xs:element name="transferChunkSize" type="xs:integer"/>
+</xs:schema>

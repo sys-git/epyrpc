@@ -1,0 +1,3 @@
+
+class UnsupportedTransportError(Exception):
+    pass

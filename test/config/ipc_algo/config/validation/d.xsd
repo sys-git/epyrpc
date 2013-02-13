@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="d" xmlns:ns1="d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <xs:element name="d">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ns1:ipc"/>
+      </xs:sequence>
+      <xs:attribute ref="xsi:schemaLocation" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ipc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ns1:type"/>
+        <xs:element ref="ns1:compression"/>
+        <xs:element ref="ns1:encryption"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="type" type="xs:NCName"/>
+  <xs:element name="compression">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ns1:enable"/>
+        <xs:element ref="ns1:algo"/>
+        <xs:element ref="ns1:args"/>
+        <xs:element ref="ns1:order"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="encryption">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ns1:enable"/>
+        <xs:element ref="ns1:algo"/>
+        <xs:element ref="ns1:args"/>
+        <xs:element ref="ns1:order"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="enable" type="xs:boolean"/>
+  <xs:element name="algo" type="xs:NCName"/>
+  <xs:element name="args">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="ns1:level"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="level" type="xs:integer"/>
+  <xs:element name="order" type="xs:integer"/>
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+ elementFormDefault="qualified"
+ targetNamespace="sourceDistribution"
+ xmlns:sourceDistribution = "sourceDistribution">
+  <xs:element name="sourceDistribution">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="sourceDistribution:SourceDistributionDestinations"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SourceDistributionDestinations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="1" ref="sourceDistribution:domainDestination"/>
+        <xs:element maxOccurs="1" minOccurs="1" ref="sourceDistribution:sourceDestination"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="domainDestination" type="xs:string"/>
+  <xs:element name="sourceDestination" type="xs:string"/>
+</xs:schema>

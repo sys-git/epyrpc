@@ -1,0 +1,9 @@
+<sourceDistribution
+    xmlns="sourceDistribution"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="sourceDistribution validation/sourceDistribution.xsd">
+    <SourceDistributionDestinations>
+        <domainDestination>/tmp/TAS/</domainDestination>
+        <sourceDestination>/tmp/TAS/</sourceDestination>
+    </SourceDistributionDestinations>
+</sourceDistribution>

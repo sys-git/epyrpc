@@ -1,0 +1,16 @@
+<filters xmlns="filters" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="filters validation/filters.xsd">
+    <TestFilter enabled="false">
+        <direction>include</direction>
+        <parameter>testStatus</parameter>
+        <values>
+            <value>inuse</value>
+            <value>youviewreview</value>
+        </values>
+    </TestFilter>
+    <TestPackFilter enabled="false">
+        <locations>
+            <location>/home/smoky/Desktop/soak.testpack</location>
+        </locations>
+    </TestPackFilter>
+</filters>

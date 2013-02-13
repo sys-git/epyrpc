@@ -1,0 +1,3 @@
+
+class IncompleteTransactionError(Exception):    pass
+

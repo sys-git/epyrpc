@@ -1,0 +1,27 @@
+<filters
+    xmlns="filters"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="filters validation/filters.xsd">
+ <TestFilter enabled="true">
+  <direction>include</direction>
+  <parameter>testClass</parameter>
+  <values>
+   <value>class1</value>
+   <value>eqjdia</value>
+  </values>
+ </TestFilter>
+ <TestFilter enabled="true">
+  <direction>exclude</direction>
+  <parameter>testClass</parameter>
+  <values>
+   <value>eqjdia</value>
+  </values>
+ </TestFilter>
+ <TestFilter enabled="false">
+  <direction>exclude</direction>
+  <parameter>testClass</parameter>
+  <values>
+   <value>dvb-t2</value>
+  </values>
+ </TestFilter>
+</filters>

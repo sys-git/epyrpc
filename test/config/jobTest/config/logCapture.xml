@@ -1,0 +1,14 @@
+<logCapture
+    xmlns="logCapture"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="logCapture validation/logCapture.xsd">
+    <logTypes>
+        <stdout enabled="true"/>
+        <stderr enabled="true"/>
+        <dbus enabled="true">/usr/bin/dbus-monitor</dbus>
+    </logTypes>
+    <logTransfer>
+        <chunkSize>1024</chunkSize>
+    </logTransfer>
+    <tmpStorageLocation>/tmp</tmpStorageLocation>
+</logCapture>

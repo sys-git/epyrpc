@@ -1,0 +1,22 @@
+<d xmlns="d"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="d validation/d.xsd">
+    <ipc>
+        <type>MQUEUE</type>
+        <compression>
+            <enable>false</enable>
+            <algo>blah</algo>
+            <args>
+                <level>9</level>
+            </args>
+            <order>1</order>
+        </compression>
+        <encryption>
+            <enable>true</enable>
+            <algo>blahdblah</algo>
+            <args>
+            </args>
+            <order>2</order>
+        </encryption>
+    </ipc>
+</d>

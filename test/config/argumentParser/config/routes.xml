@@ -1,0 +1,13 @@
+<routes
+    xmlns="routes"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="routes validation/routes.xsd">
+    <route name="Technicolor1" enabled="true">
+        <host>127.0.0.1</host>
+        <port>5006</port>
+    </route>
+    <route name="Technicolor2" enabled="true">
+        <host>10.0.0.1</host>
+        <port>7006</port>
+    </route>
+</routes>

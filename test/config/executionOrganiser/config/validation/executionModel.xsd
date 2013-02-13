@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="executionModel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="executionModel">
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <xs:element name="executionModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ns1:timeouts"/>
+      </xs:sequence>
+      <xs:attribute ref="xsi:schemaLocation" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="timeouts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ns1:executionOrganiserInit"/>
+        <xs:element ref="ns1:executionOrganiserDefaultSync"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="executionOrganiserInit" type="xs:integer"/>
+  <xs:element name="executionOrganiserDefaultSync" type="xs:integer"/>
+</xs:schema>

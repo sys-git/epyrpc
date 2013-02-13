@@ -1,0 +1,8 @@
+<ipcTransportFactory
+    xmlns="ipcTransportFactory"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="ipcTransportFactory validation/ipcTransportFactory.xsd">
+    <ipc>
+        <type>UNKNOWN</type>
+    </ipc>
+</ipcTransportFactory>

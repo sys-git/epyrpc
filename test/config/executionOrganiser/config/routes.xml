@@ -1,0 +1,16 @@
+<routes xmlns="routes"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="routes validation/routes.xsd">
+ <route name="humax1" enabled="false">
+    <host>192.168.16.170</host>
+    <port>5005</port>
+  </route>
+ <route name="humax2" enabled="false">
+    <host>192.168.16.145</host>
+    <port>5005</port>
+  </route>
+ <route name="humax3" enabled="false">
+    <host>192.168.19.119</host>
+    <port>5005</port>
+  </route>
+</routes>

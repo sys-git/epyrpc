@@ -1,0 +1,9 @@
+<routes
+    xmlns="routes"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="routes validation/routes.xsd">
+    <route name="Humax1" enabled="true">
+        <host>127.0.0.1</host>
+        <port>5006</port>
+    </route>
+</routes>

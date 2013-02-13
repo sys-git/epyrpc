@@ -1,0 +1,25 @@
+<discovery
+    xmlns="discovery"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="discovery validation/discovery.xsd">
+    <PythonNose>
+        <DiscoveryWorker enabled="true" />
+        <DatabaseReader enabled="false">
+            <location>./master.sqlite3</location>
+        </DatabaseReader>
+        <SourceLocation>
+            <testRoot>../testData/SystemAPITestSuite</testRoot>
+            <testPath>oem_tests</testPath>
+        </SourceLocation>
+    </PythonNose>
+    <StbTester>
+        <DiscoveryWorker enabled="false" />
+        <DatabaseReader enabled="false">
+            <location>./master.sqlite3</location>
+        </DatabaseReader>
+        <SourceLocation>
+            <testRoot>../testData/SystemAPITestSuite</testRoot>
+            <testPath>oem_tests</testPath>
+        </SourceLocation>
+    </StbTester>
+</discovery>

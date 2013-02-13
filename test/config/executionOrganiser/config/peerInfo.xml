@@ -1,0 +1,21 @@
+<peerInfo
+    xmlns="peerInfo"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="peerInfo validation/peerInfo.xsd">
+    <attributes>
+        <attribute name="envserverHost">127.0.0.1</attribute>
+        <attribute name="envserverPort">9595</attribute>
+        <attribute name="reboot.cmd.signal">reboot -f</attribute>
+        <attribute name="reboot.usr.ssh">test</attribute>
+        <attribute name="reboot.psw.ssh">test</attribute>
+        <attribute name="reboot.port.ssh">2022</attribute>
+        <attribute name="reboot.cmd.ssh">reboot me please</attribute>
+        <attribute name="reboot.usr.pwr">test-pwr</attribute>
+        <attribute name="reboot.psw.pwr">test-pwr</attribute>
+        <attribute name="reboot.host.pwr">127.0.0.1</attribute>
+        <attribute name="reboot.port.pwr">2024</attribute>
+        <attribute name="reboot.cmd.pwr">power off port 1</attribute>
+        <attribute name="reboot.quit.pwr">QUIT</attribute>
+        <attribute name="reboot.timeout">1</attribute>
+    </attributes>
+</peerInfo>

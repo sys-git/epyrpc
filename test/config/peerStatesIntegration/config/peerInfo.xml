@@ -1,0 +1,9 @@
+<peerInfo
+    xmlns="peerInfo"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="peerInfo validation/peerInfo.xsd">
+    <attributes>
+        <attribute name="reboot.cmd.signal">reboot -f</attribute>
+        <attribute name="reboot.timeout">1</attribute>
+    </attributes>
+</peerInfo>

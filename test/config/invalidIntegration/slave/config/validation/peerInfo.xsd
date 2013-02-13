@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ elementFormDefault="qualified"
+ targetNamespace="peerInfo"
+ xmlns:peerInfo = "peerInfo">
+  <xs:element name="peerInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="peerInfo:attributes"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="attributes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="peerInfo:attribute" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="attribute">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="name" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="envserverHost" />
+                    <xs:enumeration value="envserverPort" />
+                    <xs:enumeration value="reboot.timeout" />
+                    <xs:enumeration value="reboot.cmd.signal" />
+                    <xs:enumeration value="reboot.usr.ssh" />
+                    <xs:enumeration value="reboot.psw.ssh" />
+                    <xs:enumeration value="reboot.cmd.ssh" />
+                    <xs:enumeration value="reboot.port.ssh" />
+                    <xs:enumeration value="reboot.usr.pwr" />
+                    <xs:enumeration value="reboot.psw.pwr" />
+                    <xs:enumeration value="reboot.host.pwr" />
+                    <xs:enumeration value="reboot.port.pwr" />
+                    <xs:enumeration value="reboot.cmd.pwr" />
+                    <xs:enumeration value="reboot.quit.pwr" />
+                </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

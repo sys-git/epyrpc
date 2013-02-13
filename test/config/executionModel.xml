@@ -1,0 +1,9 @@
+<executionModel
+    xmlns="executionModel"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="executionModel validation/executionModel.xsd">
+    <timeouts>
+        <executionOrganiserInit>300</executionOrganiserInit>
+        <executionOrganiserDefaultSync>2</executionOrganiserDefaultSync>
+    </timeouts>
+</executionModel>

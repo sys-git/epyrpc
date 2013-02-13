@@ -1,0 +1,33 @@
+<filters
+    xmlns="filters"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="filters validation/filters.xsd">
+ <TestFilter enabled="true">
+  <direction>include</direction>
+  <parameter>testFile</parameter>
+  <values>
+   <value>/test/t.py</value>
+   <value>/t/test.py</value>
+  </values>
+ </TestFilter>
+ <TestFilter enabled="true">
+  <direction>exclude</direction>
+  <parameter>testFile</parameter>
+  <values>
+   <value>/t/test.py</value>
+  </values>
+ </TestFilter>
+ <TestFilter enabled="false">
+  <direction>exclude</direction>
+  <parameter>testFile</parameter>
+  <values>
+   <value>/test/t.py</value>
+  </values>
+ </TestFilter>
+ <PriorityFilter enabled="false">
+  <direction>descending</direction>
+  <parameter>testClass</parameter>
+  <values>
+  </values>
+ </PriorityFilter>
+</filters>
