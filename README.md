@@ -32,6 +32,8 @@ The receiver apis are multithreaded, the exact number of threads used is configu
 in only one api call being transacted on the receiver, probably not what you want and will result in the calling side
 appearing to lockup on blocking calls (unless a timeout is specified), or timeout on asynchronous calls!
 
+There is a full suite of unit-tests which take about 285 seconds and yield no leftover threads or processes.
+
 Example taken and extended from one of the unit-tests:
 
         #    Create the IPC:
