@@ -15,7 +15,7 @@ Receiver APIs can have hard-coded handler methods, or a reciever can register ha
 called when an api request is received for a namespace which isn't handled.
 APIs can be dynamically created (ie: from config) although this is still to be done, but as long as the api's inherit
 from a particular superclass and obey particular rules then they can be created/destroyed ad infenitum over the
-lifetime of a given transport.
+lifetime of a given IPC transport.
 An api has default values for timeout, solicited, sync / non-sync (callback or semaphore)
 If the called api yields an exception, then the caller receives the exception as a raised exception (blocking call)
 or as an exception object as the result in an asynchronous callback.
