@@ -41,16 +41,21 @@ Example taken and extended from one of the unit-tests:
         #    handling timeouts, callbacks, error-handling etc.
         tmHead = TransactionManager(HeadTransactionIdGenerator())
         tmNeck = TransactionManager(NeckTransactionIdGenerator())
+
         #    Create the listeners that handle unsolicited api calls or calls that have no existing handler set:
-        self.hl = My1Listener()
-        self.nl = My1Listener()
+        def MyHeadListener(iIpcTransportDataReceiveListener, iIpcTransportStateChangeListener):
+            def transportStateChange(self, e_ipc_transport_state):
+                #       The IPC state has changed, see: eIpcTransportState
+            def transportDataReceive(self, tId, data):
+                #       Unhandled api call received with type(data)=IpcMessageBase.
+        self.hl = MyHeadListener()
         #   Abstracted queue transport factory:
         self.qTransport = QueueTransportDetails()
         #   Create the underlying transports (Neck and Head):
         #    Create the Head as one side of the transport:
         self.ipcHead = QueueTransporter(self.qTransport, tmHead, self.hl, logger=LogManager().getLogger("Head"))
         #    Create the Neck as the other side of the transport:
-        self.ipcNeck = QueueTransporter(self.qTransport.invert(), tmNeck, self.nl, logger=LogManager().getLogger("Neck"))
+        self.ipcNeck = QueueTransporter(self.qTransport.invert(), tmNeck, logger=LogManager().getLogger("Neck"))
         #    Create the hierarchical api 'objects' on each side:
         #    Head api with namespace 'test':
         self.apiHead = Head("test")
@@ -68,10 +73,10 @@ Example taken and extended from one of the unit-tests:
         self.ipcNeck.connect()
         #    Now call the api method 'method_a' in the apiHead:
         #    Create the api method to be called, passing all args & kwargs,
-        #       This will be handled by Neck.nestedApiObject1._handler_method_a():
+        #       This will be handled by Neck.nestedApiObject._handler_method_a():
         func = self.apiHead.nestedApiObject.method_a(*(0, 1, 2, 3), **{"four":4, "five":5})
         #       Or call from the non-nested top-level api:
-        func1 = self.apiNeck.method_c("hello", world=True)
+        func = self.apiNeck.method_c("hello", world=True)
         try:
             #    Now modify the default behaviour of the api (synchronicity/blocking, solicited, timeout, etc) and CALL IT !
             #    This is entirely optional, if the api has it's default behaviour set then there is no need to override it!
@@ -129,10 +134,12 @@ Example taken and extended from one of the unit-tests:
         
             #   A method prefix of '_handler_' automatically makes it an api handler:
             def _handler_method_b(self, tId, bSynchronous, *func_args, **func_kwargs):
-                #       Do work in here in response to the rpc call from the Neck...
-                return some_result
-                #       Or raise an exception, checked or unchecked:
-                raise some_exception
+                def work(*funcArgs, **funcKargs)
+                        #       Do work in here in response to the rpc call from the Neck...
+                        #       Or raise an exception, checked or unchecked:
+                        raise some_exception        
+                #       Handle the call correctly or use the builtin handler wrapper:
+                return self._handleStandardCall(tId, bSynchronous, work, *func_args, **func_kwargs)
         
             #   A normal method acts as the api method which the Head's caller can use:
             def method_c(self, *func_args, **func_kwargs):
