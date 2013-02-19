@@ -53,13 +53,13 @@ Example taken and extended from one of the unit-tests:
         self.ipcNeck = QueueTransporter(self.qTransport.invert(), tmNeck, self.nl, logger=LogManager().getLogger("Neck"))
         #    Create the hierarchical api 'objects' on each side:
         #    Head api with namespace 'test':
-        self.apiHead = Api("test")
+        self.apiHead = Head("test")
         ...etc (more apis bound as attributes to self.apiHead, of infinite depth)
         #    Bind the ipc into the Head apis:
         self.apiHead.ipc = self.ipcHead
         #    Neck api with namespace 'test', where all api calls 'originating from the Neck' are solicited only (ie: no
         #    spontaneous unsolicited events, unless overridden):
-        self.apiNeck = Api("test", solicited=True)
+        self.apiNeck = Neck("test", solicited=True)
         ...etc
         #    Bind the ipc into the Neck apis:
         self.apiNeck.ipc = self.ipcNeck
