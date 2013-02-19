@@ -18,11 +18,11 @@ setup(
     author="Francis Horsman",
     author_email="francis.horsman@gmail.com",
     description="Object based pure Python RPC.",
-    license="BSD",
+    license="GNU General Public License",
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: GNU General Public License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Communications',
