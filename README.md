@@ -4,7 +4,7 @@ epyrpc
 Object based pure Python RPC for inter-process communications.
 
 Inter-process RPC exposed over an interface (currently supported: multiprocessing.queue) as hierarchical object
-based api.
+based api over an underlying IPC transport.
 Full suport for synchronous (blocking with timeout) / asynchronous (both with timeout: callback, semaphore release), both solicited
 and non-solicited data (events).
 All RPC is heirarchical dot seperated namespace based, with generic handlers for unhandled api methods which 
