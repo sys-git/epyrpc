@@ -200,7 +200,7 @@ class iApi(Interface):
         """ Asynchronously send data back to the opposite API """
         msg = ApiTransportResponse(data)
         # We ignore the tId that sendData returns because we don't care
-        self._epyrpc.sendData(msg, transactionId=tId)
+        self._ipc.sendData(msg, transactionId=tId)
 
     def sendAsyncPartialResponse(self, tId, combinerMethod, index, numChunks, firstChunk):
         """
@@ -208,7 +208,7 @@ class iApi(Interface):
         @attention: This is the first chunk.
         """
         msg = IpcTransportPartialResponse(tId, combinerMethod, index, numChunks, firstChunk)
-        self._epyrpc.sendData(msg, transactionId=tId)
+        self._ipc.sendData(msg, transactionId=tId)
 
     def _returnChunks(self, tId, chunks, combinerMethod, formatResult):
         #    First send the start-of-extended-transaction:

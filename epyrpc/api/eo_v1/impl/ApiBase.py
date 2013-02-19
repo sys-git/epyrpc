@@ -33,7 +33,7 @@ class ApiBaseOld(iApi, iIpcTransportDataReceiveListener):
     def _newIpc(self):
         super(ApiBaseOld, self)._newIpc()
         #    Now bind our data-receive listener to the IPC:
-        self._epyrpc.setTransportDataReceiveListener(self)
+        self._ipc.setTransportDataReceiveListener(self)
     def transportDataReceive(self, tId, data):
         r"""
         @summary: Data is received that is NOT part of an existing transaction.
@@ -256,12 +256,12 @@ class ApiBase(iApi, iIpcTransportDataReceiveListener):
         self._logger.debug("Stopped async workers (all daemon anyway).")
         #    Now un-bind our data-receive listener from the IPC:
         if self._ipc != None:
-            self._epyrpc.setTransportDataReceiveListener(self)
+            self._ipc.setTransportDataReceiveListener(self)
         self._ipc = None
     def _newIpc(self):
         super(ApiBase, self)._newIpc()
         #    Now bind our data-receive listener to the IPC:
-        self._epyrpc.setTransportDataReceiveListener(self)
+        self._ipc.setTransportDataReceiveListener(self)
     def transportDataReceive(self, tId, data):
         r"""
         @summary: Data is received that is NOT part of an existing transaction.

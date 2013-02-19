@@ -45,8 +45,8 @@ class ApiArb(iIpcTransport, iIpcTransportStateChangeListener, iIpcTransportDataR
         self._lock = RLock()
         #    Hook the IPC into us.
         self._ipc = ipc
-        self._epyrpc.setTransportStateChangeListener(self)
-        self._epyrpc.setTransportDataReceiveListener(self)
+        self._ipc.setTransportStateChangeListener(self)
+        self._ipc.setTransportDataReceiveListener(self)
     def setTransportStateChangeListener(self, listener):
         if listener != None:
             if not isinstance(listener, iIpcTransportStateChangeListener):
