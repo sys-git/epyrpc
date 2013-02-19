@@ -44,7 +44,7 @@
             </ExecutionOrganiser>
         </body>
         <api>
-            <namespace>YouView</namespace>
+            <namespace>Test</namespace>
             <ipc>
                 <type>MQUEUE</type>
             </ipc>

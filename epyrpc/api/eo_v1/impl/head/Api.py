@@ -1,11 +1,7 @@
 
-from epyrpc.api.eo_v1.interfaces.head.iAPI import iAPI
 from epyrpc.api.ApiAction import ApiAction
 from epyrpc.api.eo_v1.impl.ApiBase import ApiBase
-from epyrpc.api.eo_v1.impl.head.peers.Peers import Peers
-from epyrpc.api.eo_v1.impl.head.tas.Tas import Tas
-from epyrpc.api.eo_v1.impl.head.testManagement.TestManagement import \
-    TestManagement
+from epyrpc.api.eo_v1.interfaces.head.iAPI import iAPI
 
 class api(ApiBase, iAPI):
     r"""
@@ -15,13 +11,6 @@ class api(ApiBase, iAPI):
         super(api, self).__init__("Head", ns=ns, solicited=solicited, ignoreUnhandled=ignoreUnhandled, maxAsync=maxAsync)
         if ipc != None:
             self.ipc = ipc
-    def _setup(self, **kwargs):
-        self.tas = Tas(**kwargs)
-        self._apis.append(self.tas)
-        self.testManagement = TestManagement(**kwargs)
-        self._apis.append(self.testManagement)
-        self.peers = Peers(**kwargs)
-        self._apis.append(self.peers)
     """ CALLABLES-ACTIONS: """
     def status(self):
         r"""

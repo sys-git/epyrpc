@@ -301,3 +301,6 @@ class iApi(Interface):
     transportStateChangeListener = property(_getTransportStateChangeListener,
         _setTransportStateChangeListener)
     ipc = property(getIpc, setIpc)
+
+    def _setup(self, *args, **kwargs):
+        pass
