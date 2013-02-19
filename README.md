@@ -63,12 +63,15 @@ Example taken and extended from one of the unit-tests:
         ...etc
         #    Bind the ipc into the Neck apis:
         self.apiNeck.ipc = self.ipcNeck
-        #    Connect each side of the transport to it's IPC transport:
+        #    Connect each side of the IPC to it's underlying transport:
         self.ipcHead.connect()
         self.ipcNeck.connect()
         #    Now call the api method 'method_a' in the apiHead:
-        #    Create the api method to be called, passing all args & kwargs:
-        func = self.apiHead.method_a(*(0, 1, 2, 3), **{"four":4, "five":5})
+        #    Create the api method to be called, passing all args & kwargs,
+        #       This will be handled by Neck.nestedApiObject1._handler_method_a():
+        func = self.apiHead.nestedApiObject.method_a(*(0, 1, 2, 3), **{"four":4, "five":5})
+        #       Or call from the non-nested top-level api:
+        func1 = self.apiNeck.method_c("hello", world=True)
         try:
             #    Now modify the default behaviour of the api (synchronicity/blocking, solicited, timeout, etc) and CALL IT !
             #    This is entirely optional, if the api has it's default behaviour set then there is no need to override it!
@@ -79,3 +82,99 @@ Example taken and extended from one of the unit-tests:
         #    actual result!
         #    Bear in mind that the result has come over the IPC so any references need to be copied into the result
         #    object before being returned over the IPC.
+        
+        #    Send an unsolicited event from the Neck to the head:
+        #    Create the rpc method, this will be handled by Head._handler_method_b():
+        func1 = self.apiNeck.method_b("hello", world=True)
+        #       Or call from the nested api:
+        func1 = self.apiNeck.nestedNeckApiObject.method_d("there is no handler", world="for this api call")
+        #    And call it!
+        #    FYI - unsolicited events are 'fire-and-forget', setting 'ignoreErrors'=True prevents exceptions
+        #    from being raised if the call failed due to one of: [IpcException, TransactionFailed, iApiParamError].
+        func1(solicited = False, ignoreErrors=True)
+        
+        #       Here the Head's controller registers a handler to receive api calls on a given namespace ("method_d")
+        #       which currently has no hard-coded handler in the class 'NestedHeadApi':
+        def myHandlerMethod(self, tId, bSynchronous, *func_args, **func_kwargs):
+                #       Do work.
+                pass
+        #       Both of these calls are equivalent:
+        self.apiHead.setHandler("nestedNeckApiObject.method_d", myHandlerMethod)
+        self.apiHead.nestedNeckApiObject.setHandler("method_d", myHandlerMethod)
+        
+        
+        An example of the Head api containing the nested api object:
+        #       Note there is no handler for method_d in NestedHeadApi, this will result in an exception back at the
+        #       caller in the Neck or the Head's controller can set a global handler for all unhandled calls to allow
+        #       it to selectively process them or it can register handlers directly onto any part of the Head's nested
+        #       api by reference to it's namespace.
+        class NestedHeadApi(ApiBase):
+            def __init__(self, ns="", solicited=False, ipc=None):
+                super(NestedHeadApi, self).__init__(ns=ns, solicited=solicited)
+            def method_a(self, *func_args, **func_kwargs):
+                #       Check func_args and func_kwargs...or do something else prior to sending the data:
+                return ApiAction(self.ipc, self._makeNamespace(self._whoami()), self.solicited, *func_args, **func_kwargs)
+        
+        class Head(ApiBase):
+            def __init__(self, ns="", solicited=False, ipc=None):
+                super(Head, self).__init__(ns=ns, solicited=solicited)
+                if ipc != None:
+                    self.ipc = ipc
+
+            def _setup(self, **kwargs):
+                #       Create the nested api object:
+                self.nestedHeadApiObject = NestedHeadApi(**kwargs)
+                #       Add it to our internal api list:
+                self._apis.append(self.nestedHeadApiObject)
+        
+            #   A method prefix of '_handler_' automatically makes it an api handler:
+            def _handler_method_b(self, tId, bSynchronous, *func_args, **func_kwargs):
+                #       Do work in here in response to the rpc call from the Neck...
+                return some_result
+                #       Or raise an exception, checked or unchecked:
+                raise some_exception
+        
+            #   A normal method acts as the api method which the Head's caller can use:
+            def method_c(self, *func_args, **func_kwargs):
+                #       Check func_args and func_kwargs...or do something else prior to sending the data:
+                return ApiAction(self.ipc, self._makeNamespace(self._whoami()), self.solicited, *func_args, **func_kwargs)
+
+        #       ...Here's an example of the Neck:
+        class NestedNeckApi(ApiBase):
+            def __init__(self, ns="", solicited=False, ipc=None):
+                super(NestedNeckApi, self).__init__(ns=ns, solicited=solicited)
+
+            def _handler_method_a(self, tId, bSynchronous, *func_args, **func_kwargs):
+                #       Do work in here in response to the rpc call from the Head...
+                return some_result
+                #       Or raise an exception, checked or unchecked:
+                raise some_exception
+
+            def method_d(self, *func_args, **func_kwargs):
+                #       Check func_args and func_kwargs...or do something else prior to sending the data:
+                return ApiAction(self.ipc, self._makeNamespace(self._whoami()), self.solicited, *func_args, **func_kwargs)
+                
+        class Neck(ApiBase):
+            def __init__(self, ns="", solicited=True, ipc=None):
+                super(Neck, self).__init__(ns=ns, solicited=solicited)
+                if ipc != None:
+                        self.ipc = ipc
+ 
+            def _setup(self, **kwargs):
+                #       Create the nested api object:
+                self.nestedNeckApiObject = NestedNeckApi(**kwargs)
+                #       Add it to our internal api list:
+                self._apis.append(self.nestedNeckApiObject)
+                
+            #   A method prefix of '_handler_' automatically makes it an api handler:
+            def _handler_method_c(self, tId, bSynchronous, *func_args, **func_kwargs):
+                #       Do work in here in response to the rpc call from the Head...
+                return some_result
+                #       Or raise an exception, checked or unchecked:
+                raise some_exception
+                
+            def method_b(self, *func_args, **func_kwargs):
+                #       Check func_args and func_kwargs...or do something else prior to sending the data:
+                return ApiAction(self.ipc, self._makeNamespace(self._whoami()), self.solicited, *func_args, **func_kwargs)
+                
+                
