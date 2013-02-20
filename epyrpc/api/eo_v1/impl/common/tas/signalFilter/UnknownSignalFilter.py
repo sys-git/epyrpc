@@ -1,2 +1,0 @@
-
-class UnknownSignalFilter(Exception): pass

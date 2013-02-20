@@ -1,6 +1,0 @@
-<fileService xmlns="fileService"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="fileService validation/fileService.xsd">
-    <tmpStorageLocation>/tmp/source</tmpStorageLocation>
-    <port>7778</port>
-</fileService>

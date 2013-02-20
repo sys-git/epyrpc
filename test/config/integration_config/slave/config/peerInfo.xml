@@ -1,9 +1,0 @@
-<peerInfo
-    xmlns="peerInfo"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="peerInfo validation/peerInfo.xsd">
-    <attributes>
-        <attribute name="envserverHost">10.122.129.146</attribute>
-        <attribute name="envserverPort">9595</attribute>
-    </attributes>
-</peerInfo>

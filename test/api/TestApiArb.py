@@ -23,6 +23,7 @@ from threading import Semaphore
 import inspect
 import threading
 import unittest
+import os
 
 class _baseApi(ApiBase):
     def _setup(self, **kwargs):
@@ -97,6 +98,7 @@ class TestIpcArbitor(unittest.TestCase):
         self._apis = []
         ConfigurationManager().destroySingleton()
         IpcTransportDetailsFactory.reset()
+        a = os.getcwd()
         self._config = ConfigurationManager(cwd="config/ipc_arb").getConfiguration("masterLauncher").configuration.Configurations
         self._neckTransactionManager = TransactionManager(NeckTransactionIdGenerator())
         self._headTransactionManager = TransactionManager(HeadTransactionIdGenerator())

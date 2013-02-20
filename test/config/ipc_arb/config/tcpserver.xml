@@ -1,7 +1,0 @@
-<tcpserver
-    xmlns="tcpserver"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="tcpserver validation/tcpserver.xsd">
-    <port>5270</port>
-    <interface>lo</interface>
-</tcpserver>

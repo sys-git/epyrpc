@@ -3,7 +3,6 @@ from epyrpc.api.ApiAction import ApiAction
 from epyrpc.api.AsyncResult import AsyncResult
 from epyrpc.api.eSync import eSync
 from epyrpc.api.eo_v1.impl.ApiBase import ApiBase
-from epyrpc.api.eo_v1.impl.head.tas.Tas import Tas
 from epyrpc.api.iApi import iApi
 from epyrpc.api.iApiAction import iApiAction
 from epyrpc.api.iAsyncResult import iAsyncResult
@@ -51,7 +50,7 @@ class TestApiActionNoParams(unittest.TestCase):
     def setUp(self):
         self.threads = []
         self.ipc = MyIpc()
-        self.api = Tas(ns="api", ipc=self.ipc)
+        self.api = XXX(ns="api", ipc=self.ipc)
         setattr(self.api, "ipc", self.ipc)
     def tearDown(self):
         for t in self.threads:
