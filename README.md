@@ -32,7 +32,21 @@ The receiver apis are multithreaded, the exact number of threads used is configu
 in only one api call being transacted on the receiver, probably not what you want and will result in the calling side
 appearing to lockup on blocking calls (unless a timeout is specified), or timeout on asynchronous calls!
 
-There is a full suite of unit-tests which take about 285 seconds and yield no leftover threads or processes.
+There is a full suite of unit-tests which yield no leftover threads or processes.
+
+The IPC allows a single api access to it. In order to allow multiple apis concurrant access to the same IPC, the
+TransportFactory uses an api arbitrator: ApiArb as shown below:
+
+    Typical example usage:
+    ( HEAD                     ) -------------------------( BODY                     )
+    ['1' handler workers]-api1-\                          /-api1-['x' handler workers]
+    ['1' handler workers]-api2-ApiArb--IPC-wire-IPC--ApiArb-api2-['y' handler workers]
+    ['1' handler workers]-api3-/                          \-api3-['z' handler workers]
+
+TODO:
+Make api inheritance automatic.
+Auto-create apis from configuration xml, alternatively make api methods automatically generated when hard-coded.
+Implement other IPC transports (ie: socket)
 
 Example taken and extended from one of the unit-tests:
 
