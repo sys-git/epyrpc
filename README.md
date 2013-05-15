@@ -48,6 +48,11 @@ Make api inheritance automatic.
 Auto-create apis from configuration xml, alternatively make api methods automatically generated when hard-coded.
 Implement other IPC transports (ie: socket)
 
+In case you're feeling generous:
+LTC: LT636SrauWAz9XDz2EKxAXQ5jKqehyhR69
+BTC: 13vS6cvzZXf1Yxrar2SYSPQrFLSEwLePV4
+
+
 Example taken and extended from one of the unit-tests:
 
         #    Create the IPC:
