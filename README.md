@@ -65,8 +65,10 @@ Example taken and extended from one of the unit-tests:
         def MyHeadListener(iIpcTransportDataReceiveListener, iIpcTransportStateChangeListener):
             def transportStateChange(self, e_ipc_transport_state):
                 #       The IPC state has changed, see: eIpcTransportState
+                pass
             def transportDataReceive(self, tId, data):
                 #       Unhandled api call received with type(data)=IpcMessageBase.
+                pass
         self.hl = MyHeadListener()
         #   Abstracted queue transport factory:
         self.qTransport = QueueTransportDetails()
